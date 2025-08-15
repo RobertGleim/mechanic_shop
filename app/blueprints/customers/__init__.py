@@ -2,8 +2,9 @@ from flask import Blueprint
 
 
 
-customers_bp = Blueprint('customers', __name__)
-from . import routes
+customers_bp = Blueprint('customers_bp', __name__)
+
+from . import route
 
 
 

@@ -8,7 +8,7 @@ from app.models import Mechanics, db
 
 @mechanics_bp.route('', methods=['POST'])
 
-def create_customer():
+def create_mechanic():
     try:
         data = mechanics_schema.load(request.json)
     except ValidationError as e: 
