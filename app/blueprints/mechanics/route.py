@@ -60,6 +60,7 @@ def update_mechanic(mechanic_id):
         Mechainc_data = mechanic_schema.load(request.json)
     except ValidationError as e:
         return jsonify({"Message": e.messages}), 400
+    Mechainc_data['password'] = generate_password_hash(Mechainc_data['password'])
     for key, value in Mechainc_data.items():
         setattr(mechanic, key, value)
     db.session.commit()

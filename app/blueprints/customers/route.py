@@ -35,6 +35,7 @@ def create_customer():
         data = customer_schema.load(request.json)
     except ValidationError as e: 
         return jsonify(e.messages),400
+    data['password'] = generate_password_hash(data['password'])
 
     new_customer = Customers(**data)
     db.session.add(new_customer)
@@ -79,6 +80,7 @@ def update_customer(customer_id):
         Customer_data = customer_schema.load(request.json)
     except ValidationError as e:
         return jsonify({"Message": e.messages}), 400
+    Customer_data['password'] = generate_password_hash(Customer_data['password'])
     for key, value in Customer_data.items():
         setattr(customer, key, value)
     db.session.commit()
