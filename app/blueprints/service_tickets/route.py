@@ -5,19 +5,18 @@ from marshmallow import ValidationError
 from app.models import Service_Ticket, db
 
 
-
 @service_tickets_bp.route('', methods=['POST'])
 
 def create_service_ticket():
     try:
-        data = service_tickets_schema.load(request.json)
+        data = service_ticket_schema.load(request.json)
     except ValidationError as e: 
         return jsonify(e.messages),400
 
     new_service = Service_Ticket(**data)
     db.session.add(new_service)
     db.session.commit()
-    print(f"New Service ticket was created : {new_service.ticket_id} for customer {new_service.customer_id}")
+    print(f"New Service ticket was created : For Customer {new_service.customer_id}")
     return service_ticket_schema.jsonify(new_service), 201
 
 @service_tickets_bp.route('', methods=['GET'])
@@ -51,7 +50,7 @@ def update_service_ticket(service_ticket_id):
     except ValidationError as e:
         return jsonify({"Message": e.messages}), 400
     for key, value in Service_Ticket_data.items():
-        setattr(service_tickets_bp, key, value)
+        setattr(service_ticket, key, value)
     db.session.commit()
-    print(f"Service Ticket updated: {service_ticket.ticket_id} for customer {service_ticket.customer_id}")
-    return service_ticket_schema.jsonify(service_tickets_bp), 200
+    print(f"Service Ticket updated: for customer {service_ticket.customer_id}")
+    return service_ticket_schema.jsonify(service_ticket), 200

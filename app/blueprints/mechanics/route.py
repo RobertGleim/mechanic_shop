@@ -10,7 +10,7 @@ from app.models import Mechanics, db
 
 def create_mechanic():
     try:
-        data = mechanics_schema.load(request.json)
+        data = mechanic_schema.load(request.json)
     except ValidationError as e: 
         return jsonify(e.messages),400
 

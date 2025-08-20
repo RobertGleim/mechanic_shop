@@ -5,8 +5,7 @@ from marshmallow import ValidationError
 from app.models import Customers, db
 
 
-
-@customers_bp.route('', methods=['POST'])
+@customers_bp.route('/', methods=['POST'])
 
 def create_customer():
     try:
@@ -17,7 +16,7 @@ def create_customer():
     new_customer = Customers(**data)
     db.session.add(new_customer)
     db.session.commit()
-    print(f"New User was created, Welcome: {new_customer.first_name} {new_customer.last_name}")
+    print(f"New Customer was created, Welcome: {new_customer.first_name} {new_customer.last_name}")
     return customer_schema.jsonify(new_customer), 201
 
 @customers_bp.route('', methods=['GET'])

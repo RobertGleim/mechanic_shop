@@ -33,7 +33,6 @@ class Service_Ticket(Base):
     
     id: Mapped[int] = mapped_column(primary_key=True)
     customer_id: Mapped[int] = mapped_column(Integer, ForeignKey('customers.id'), nullable=False)
-    
     service_description: Mapped[str] = mapped_column(String(500), nullable=False)
     price: Mapped[float] = mapped_column(Float,nullable=False)
     vin: Mapped[str] = mapped_column(String(20), nullable=False)
@@ -51,6 +50,8 @@ class Ticket_Mechanics(Base):
     id: Mapped[int] = mapped_column(primary_key=True)
     service_ticket_id: Mapped[int] = mapped_column(Integer,ForeignKey('service_tickets.id'), nullable=False)
     mechanic_id: Mapped[int] = mapped_column(Integer,ForeignKey('mechanics.id'), nullable=False)
+    customer_id: Mapped[int] = mapped_column(Integer, ForeignKey('customers.id'), nullable=False)
+    
     service_ticket: Mapped['Service_Ticket'] = relationship('Service_Ticket', back_populates='mechanics')
     mechanic: Mapped['Mechanics'] = relationship('Mechanics', back_populates='service_tickets')
 
