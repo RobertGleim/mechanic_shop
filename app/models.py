@@ -24,6 +24,7 @@ class Customers(Base):
     email: Mapped[str] = mapped_column(String(360), unique=True, nullable=False)
     phone: Mapped[str] = mapped_column(String(15), nullable=True)
     address: Mapped[str] = mapped_column(String(500), nullable=True)
+    password: Mapped[str] = mapped_column(String(120), nullable=False)
     
     
     service_tickets: Mapped[list['Service_Ticket']] = relationship('Service_Ticket', back_populates='customer') 

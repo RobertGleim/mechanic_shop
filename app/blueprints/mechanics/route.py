@@ -3,16 +3,20 @@ from .schema import mechanic_schema, mechanics_schema
 from flask import request, jsonify
 from marshmallow import ValidationError
 from app.models import Mechanics, db
+from app.extenstions import limiter, cache
+from werkzeug.security import generate_password_hash
 
 
 
 @mechanics_bp.route('', methods=['POST'])
-
+@limiter.limit("20 per hour", override_defaults=True)
 def create_mechanic():
     try:
         data = mechanic_schema.load(request.json)
     except ValidationError as e: 
         return jsonify(e.messages),400
+    
+    data['password'] = generate_password_hash(data['password'])
 
     new_mechanic = Mechanics(**data)
     db.session.add(new_mechanic)
@@ -21,18 +25,23 @@ def create_mechanic():
     return mechanic_schema.jsonify(new_mechanic), 201
 
 @mechanics_bp.route('', methods=['GET'])
+# limiter left blank to use default limits
+@cache.cached(timeout=60)
 def read_mechanics():
     mechanics = db.session.query(Mechanics).all()
     return mechanics_schema.jsonify(mechanics), 200
 
 @mechanics_bp.route('<int:mechanic_id>', methods=['GET'])
+# limiter left blank to use default limits
+@cache.cached(timeout=60)
 def read_mechainc(mechanic_id):
     mechanic = db.session.get(Mechanics, mechanic_id) 
     print(f"Mechanic found: {mechanic.first_name} {mechanic.last_name}")
     return mechanic_schema.jsonify(mechanic), 200
 
 
-@mechanics_bp.route('/<int:mechanics_id>', methods=['DELETE'])  
+@mechanics_bp.route('/<int:mechanics_id>', methods=['DELETE']) 
+@limiter.limit("3 per hour") 
 def delete_mechanic(mechanics_id):
     mechanic = db.session.get(Mechanics, mechanics_id)
     db.session.delete(mechanic)
@@ -41,6 +50,7 @@ def delete_mechanic(mechanics_id):
     return jsonify({"message": f"Sorry to see you go! {mechanics_id}"}), 200
 
 @mechanics_bp.route('<int:mechanic_id>', methods=['PUT'])
+@limiter.limit("20 per hour", override_defaults=True)
 def update_mechanic(mechanic_id):
     mechanic = db.session.get(Mechanics, mechanic_id)
     
