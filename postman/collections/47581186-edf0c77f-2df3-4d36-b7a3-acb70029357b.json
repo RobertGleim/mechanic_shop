@@ -129,7 +129,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"first_name\":\"Robert111\",\r\n    \"last_name\" :\"Gleim111\",\r\n    \"email\":\"rgleim111@email.com\",\r\n    \"phone\":\"555-555-5555\",\r\n    \"address\":\"123 street street\"\r\n}",
+							"raw": "{\r\n    \"first_name\":\"Robert\",\r\n    \"last_name\" :\"Gleim\",\r\n    \"email\":\"rgleim1@email.com\",\r\n    \"phone\":\"555-555-5555\",\r\n    \"address\":\"123 street street\",\r\n    \"password\":\"123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -188,6 +188,42 @@
 							"path": [
 								"customers",
 								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"id": "47581186-fa301465-38ea-4972-9411-7afaa63e1f73",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"rgleim2@email.com\",\r\n    \"password\":\"12345\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/customers/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"customers",
+								"login"
 							]
 						}
 					},
@@ -323,7 +359,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"address\": \"123 street street\",\r\n    \"email\": \"RG1@email.com\",\r\n    \"first_name\": \"Rob1\",\r\n    \"id\": 2,\r\n    \"last_name\": \"G1\",\r\n    \"password\": \"123\",\r\n    \"salary\": 75000.00\r\n}\r\n\r\n",
+							"raw": "{\r\n    \"first_name\": \"Rob\",\r\n    \"last_name\": \"G\",\r\n    \"email\": \"RG@email.com\",\r\n    \"address\": \"123 street street\",\r\n    \"id\": 2,\r\n    \"salary\": 75000.00,\r\n    \"password\": \"123\"\r\n}\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -382,6 +418,45 @@
 							"path": [
 								"mechanics",
 								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"id": "47581186-3b8293f8-402c-4374-8189-77872ff113be",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \r\n    \"password\":\"123\",\r\n    \"email\":\"RG1@email.com\"\r\n    \r\n\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/mechanics/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"mechanics",
+								"login"
 							]
 						}
 					},
