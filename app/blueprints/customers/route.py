@@ -6,6 +6,7 @@ from app.models import Customers, db
 from app.extenstions import limiter, cache
 from app.util.auth import encode_token
 from werkzeug.security import check_password_hash, generate_password_hash
+from app.util.auth import token_required, encode_token
 
 
 
@@ -19,7 +20,7 @@ def login_customer():
     
     customer = db.session.query(Customers).where(Customers.email==data["email"]).first()
     
-    if not customer and check_password_hash(data["password"]):
+    if customer and check_password_hash(customer.password, data["password"]):
         token = encode_token(customer.id)
         return jsonify({
             "message": f"Login successful {customer.first_name} {customer.last_name}",
@@ -43,17 +44,16 @@ def create_customer():
     print(f"New Customer was created, Welcome: {new_customer.first_name} {new_customer.last_name}")
     return customer_schema.jsonify(new_customer), 201
 
-@customers_bp.route('', methods=['GET'])
+@customers_bp.route('/', methods=['GET'])
 # limiter left blank to use default limits
-@cache.cached(timeout=60)  
+@token_required
 def read_customers():
     customers = db.session.query(Customers).all()
     return customers_schema.jsonify(customers), 200
 
-@customers_bp.route('<int:customer_id>', methods=['GET'])
+@customers_bp.route('/<int:customer_id>', methods=['GET'])
 # limiter left blank to use default limits
-@cache.cached(timeout=60) 
-
+@token_required
 def read_customer(customer_id):
     customer = db.session.get(Customers, customer_id) 
     print(f"Customer found: {customer.first_name} {customer.last_name}")
@@ -61,7 +61,8 @@ def read_customer(customer_id):
 
 
 @customers_bp.route('/<int:customers_id>', methods=['DELETE'])
-@limiter.limit("3 per hour")  
+@limiter.limit("3 per hour") 
+@token_required 
 def delete_customer(customers_id):
     customer = db.session.get(Customers, customers_id)
     db.session.delete(customer)
@@ -69,8 +70,9 @@ def delete_customer(customers_id):
     print(f"Customer deleted: {customer.first_name} {customer.last_name}")
     return jsonify({"message": f"Sorry to see you go! {customers_id}"}), 200
 
-@customers_bp.route('<int:customer_id>', methods=['PUT'])
+@customers_bp.route('/<int:customer_id>', methods=['PUT'])
 @limiter.limit("20 per hour", override_defaults=True)
+@token_required
 def update_customer(customer_id):
     customer = db.session.get(Customers, customer_id)
     

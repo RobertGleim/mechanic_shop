@@ -5,14 +5,19 @@ from functools import wraps
 from flask import request, jsonify
 
 
+
+
 SECRET_KEY = "super secrect key"
 
-def encode_token(customer_id):
+def encode_token(customer_id, role='customer'):
     payload = {
         "exp": datetime.now(timezone.utc) + timedelta(days=0, hours=1),
         "iat": datetime.now(timezone.utc),
         "sub": str(customer_id),
+        "role": role
     }
+    token = jwt.encode(payload, SECRET_KEY, algorithm="HS256")
+    return token
     
 def encode_token(mechanic_id):
     payload = {
@@ -29,7 +34,7 @@ def token_required(f):
     def decorated(*args, **kwargs):
         token = None
         if "Authorization" in request.headers:
-            token = request.headers["Authorization"].split(" ")[1]
+            token = request.headers["Authorization"].split()[1]
             
         if not token:
             return jsonify({"message": "Token is missing!"}), 401 

@@ -6,7 +6,7 @@ from app.models import Service_Ticket, db
 from app.extenstions import limiter,cache
 
 
-@service_tickets_bp.route('', methods=['POST'])
+@service_tickets_bp.route('/', methods=['POST'])
 @limiter.limit("20 per hour")
 def create_service_ticket():
     try:
@@ -20,14 +20,14 @@ def create_service_ticket():
     print(f"New Service ticket was created : For Customer {new_service.customer_id}")
     return service_ticket_schema.jsonify(new_service), 201
 
-@service_tickets_bp.route('', methods=['GET'])
+@service_tickets_bp.route('/', methods=['GET'])
 @limiter.limit("50 per hour" )
 @cache.cached(timeout=30)
 def read_service_tickets():
     service_tickets = db.session.query(Service_Ticket).all()
     return service_tickets_schema.jsonify(service_tickets), 200
 
-@service_tickets_bp.route('<int:service_tickets_id>', methods=['GET'])
+@service_tickets_bp.route('/<int:service_tickets_id>', methods=['GET'])
 @limiter.limit("50 per hour")
 @cache.cached(timeout=30)
 def read_service_ticket(service_tickets_id):
@@ -45,7 +45,7 @@ def delete_service_ticket(service_tickets_id):
     print(f"Service Ticket {service_tickets_id} was deleted ")
     return jsonify({"message": f"Service Ticket  {service_tickets_id} was deleted "}), 200
 
-@service_tickets_bp.route('<int:service_ticket_id>', methods=['PUT'])
+@service_tickets_bp.route('/<int:service_ticket_id>', methods=['PUT'])
 @limiter.limit("20 per hour", override_defaults=True)
 def update_service_ticket(service_ticket_id):
     service_ticket = db.session.get(Service_Ticket, service_ticket_id)
