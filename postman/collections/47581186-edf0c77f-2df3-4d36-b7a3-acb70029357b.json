@@ -89,7 +89,14 @@
 					},
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
@@ -98,7 +105,7 @@
 							"raw": "{}"
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/customers/1",
+							"raw": "http://127.0.0.1:5000/customers",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -108,8 +115,7 @@
 							],
 							"port": "5000",
 							"path": [
-								"customers",
-								"1"
+								"customers"
 							]
 						}
 					},
@@ -137,7 +143,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/customers/1",
+							"raw": "http://127.0.0.1:5000/customers",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -147,8 +153,7 @@
 							],
 							"port": "5000",
 							"path": [
-								"customers",
-								"1"
+								"customers"
 							]
 						}
 					},
@@ -162,7 +167,14 @@
 					},
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTU4MDUzMTgsImlhdCI6MTc1NTgwMTcxOCwic3ViIjoiMiJ9.8RIPsQGRC3V0q8y961_fVsnacr7zt-Oqgm2IGPqly0o",
+									"type": "string"
+								}
+							]
 						},
 						"method": "DELETE",
 						"header": [],
@@ -176,7 +188,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/customers/3",
+							"raw": "http://127.0.0.1:5000/customers",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -186,8 +198,7 @@
 							],
 							"port": "5000",
 							"path": [
-								"customers",
-								"3"
+								"customers"
 							]
 						}
 					},
