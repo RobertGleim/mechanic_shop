@@ -812,6 +812,23 @@
 				}
 			],
 			"id": "47581186-efb7c5a8-efeb-444d-93bd-46bfe4c0165f"
+		},
+		{
+			"name": "New Folder",
+			"item": [],
+			"id": "47581186-743d4e9c-8d4c-4e15-b8ef-593a83ff74c1"
+		},
+		{
+			"name": "New Request",
+			"id": "47581186-dd022bd5-8bad-46c6-a71b-a29c148c2b41",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
 		}
 	]
 }
