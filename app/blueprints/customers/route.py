@@ -51,29 +51,32 @@ def read_customers():
     customers = db.session.query(Customers).all()
     return customers_schema.jsonify(customers), 200
 
-@customers_bp.route('/<int:customer_id>', methods=['GET'])
+@customers_bp.route('/profile', methods=['GET'])
 # limiter left blank to use default limits
 @token_required
-def read_customer(customer_id):
+def read_customer():
+    customer_id = request.customer_id
     customer = db.session.get(Customers, customer_id) 
-    print(f"Customer found: {customer.first_name} {customer.last_name}")
+    print(f"Customer found: {customer_id} ")
     return customer_schema.jsonify(customer), 200
 
 
-@customers_bp.route('/<int:customers_id>', methods=['DELETE'])
+@customers_bp.route('', methods=['DELETE'])
 @limiter.limit("3 per hour") 
 @token_required 
-def delete_customer(customers_id):
-    customer = db.session.get(Customers, customers_id)
+def delete_customer():
+    customer_id = request.customer_id
+    customer = db.session.get(Customers, customer_id)
     db.session.delete(customer)
     db.session.commit()
     print(f"Customer deleted: {customer.first_name} {customer.last_name}")
-    return jsonify({"message": f"Sorry to see you go! {customers_id}"}), 200
+    return jsonify({"message": f"Sorry to see you go! {customer_id}"}), 200
 
-@customers_bp.route('/<int:customer_id>', methods=['PUT'])
+@customers_bp.route('', methods=['PUT'])
 @limiter.limit("20 per hour", override_defaults=True)
 @token_required
-def update_customer(customer_id):
+def update_customer():
+    customer_id = request.customer_id
     customer = db.session.get(Customers, customer_id)
     
     if not customer:
