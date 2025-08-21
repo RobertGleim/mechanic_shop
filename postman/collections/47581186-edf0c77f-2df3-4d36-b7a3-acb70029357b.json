@@ -335,7 +335,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"address\": \"123 street street\",\r\n    \"email\": \"RG1@email.com\",\r\n    \"first_name\": \"Rob1\",\r\n    \"id\": 2,\r\n    \"last_name\": \"G1\",\r\n    \"password\": \"123\",\r\n    \"salary\": 75000.00\r\n}\r\n\r\n",
+							"raw": "{\r\n    \"first_name\": \"Rob\",\r\n    \"last_name\": \"G\",\r\n    \"email\": \"RG@email.com\",\r\n    \"address\": \"123 street street\",\r\n    \"id\": 2,\r\n    \"salary\": 75000.00,\r\n    \"password\": \"123\"\r\n}\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
