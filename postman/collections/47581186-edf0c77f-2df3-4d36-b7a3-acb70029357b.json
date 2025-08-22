@@ -872,7 +872,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/service_tickets/1/mechanics",
+							"raw": "http://127.0.0.1:5000/ticket_mechanics/2/get_ticket",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -882,9 +882,9 @@
 							],
 							"port": "5000",
 							"path": [
-								"service_tickets",
-								"1",
-								"mechanics"
+								"ticket_mechanics",
+								"2",
+								"get_ticket"
 							]
 						}
 					},
