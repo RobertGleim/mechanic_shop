@@ -844,7 +844,7 @@
 					"response": []
 				},
 				{
-					"name": "my tickets",
+					"name": "my tickets mechanic",
 					"id": "47581186-ccbd110a-558d-4504-9e27-5dc6e272305d",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
