@@ -815,20 +815,7 @@
 		},
 		{
 			"name": "Service search",
-			"item": [
-				{
-					"name": "New Request",
-					"id": "47581186-7418eba4-64c6-471d-a061-97933b48da98",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": []
-					},
-					"response": []
-				}
-			],
+			"item": [],
 			"id": "47581186-743d4e9c-8d4c-4e15-b8ef-593a83ff74c1"
 		}
 	]
