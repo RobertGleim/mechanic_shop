@@ -891,14 +891,44 @@
 					"response": []
 				},
 				{
-					"name": "New Request",
+					"name": "my ticket customer",
 					"id": "47581186-cacd2c59-6879-447f-81de-97f33bc8a15e",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTU4OTAwNzcsImlhdCI6MTc1NTg4NjQ3Nywic3ViIjoiMiIsInJvbGUiOiJtZWNoYW5pYyJ9.lUIR984jMR2RER3X-_uLEB2po6_iPWoGPOXVJYjeSFQ",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   "
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/ticket_mechanics/2/get_ticket_customer",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"ticket_mechanics",
+								"2",
+								"get_ticket_customer"
+							]
+						}
 					},
 					"response": []
 				}
