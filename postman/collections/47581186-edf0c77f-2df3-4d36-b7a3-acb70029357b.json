@@ -872,7 +872,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/ticket_mechanics/2/get_ticket/mechanic",
+							"raw": "http://127.0.0.1:5000/ticket_mechanics/2/get_ticket_mechanic",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -884,10 +884,21 @@
 							"path": [
 								"ticket_mechanics",
 								"2",
-								"get_ticket",
-								"mechanic"
+								"get_ticket_mechanic"
 							]
 						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"id": "47581186-cacd2c59-6879-447f-81de-97f33bc8a15e",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": []
 					},
 					"response": []
 				}
