@@ -136,13 +136,20 @@
 					},
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTYxMzY3MjUsImlhdCI6MTc1NjEzMzEyNSwic3ViIjoiMSIsInJvbGUiOiJtZWNoYW5pYyJ9.0072I_-KhWfQS-PVoQJ1jeERkRb7zDuYnnAXBjY9_PE",
+									"type": "string"
+								}
+							]
 						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"first_name\":\"Robert\",\r\n    \"last_name\" :\"Gleim\",\r\n    \"email\":\"rgleim1@email.com\",\r\n    \"phone\":\"555-555-5555\",\r\n    \"address\":\"123 street street\",\r\n    \"password\":\"123\"\r\n}",
+							"raw": "{\r\n    \"first_name\":\"Robert\",\r\n    \"last_name\" :\"Gleim\",\r\n    \"email\":\"rgleim9999@email.com\",\r\n    \"phone\":\"555-555-5555\",\r\n    \"address\":\"123 street street\",\r\n    \"password\":\"123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
