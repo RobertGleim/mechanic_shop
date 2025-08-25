@@ -395,13 +395,20 @@
 					},
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTYxMzc2NzQsImlhdCI6MTc1NjEzNDA3NCwic3ViIjoiMSIsInJvbGUiOiJtZWNoYW5pYyJ9.OBSkaQbixJ7481AnZZk4pnpcQ7iSZ1dExNfOPWvtjAY",
+									"type": "string"
+								}
+							]
 						},
 						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"first_name\": \"Rob\",\r\n    \"last_name\": \"G\",\r\n    \"email\": \"RG@email.com\",\r\n    \"address\": \"123 street street\",\r\n    \"id\": 2,\r\n    \"salary\": 75000.00,\r\n    \"password\": \"123\"\r\n}\r\n\r\n",
+							"raw": "{\r\n    \"first_name\": \"Rob\",\r\n    \"last_name\": \"G\",\r\n    \"email\": \"RG@email.com\",\r\n    \"address\": \"123 street street\",\r\n    \"id\": 1,\r\n    \"salary\": 75000.00,\r\n    \"password\": \"123\"\r\n}\r\n\r\n",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -409,7 +416,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/mechanics/1",
+							"raw": "http://127.0.0.1:5000/mechanics",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -419,8 +426,7 @@
 							],
 							"port": "5000",
 							"path": [
-								"mechanics",
-								"1"
+								"mechanics"
 							]
 						}
 					},
