@@ -772,7 +772,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "",
+							"raw": "{\r\n    \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -780,7 +780,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/ticket_mechanics/1",
+							"raw": "http://127.0.0.1:5000/ticket_mechanics/1/5",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -791,7 +791,8 @@
 							"port": "5000",
 							"path": [
 								"ticket_mechanics",
-								"1"
+								"1",
+								"5"
 							]
 						}
 					},
