@@ -927,8 +927,43 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTYxNDE0NjMsImlhdCI6MTc1NjEzNzg2Mywic3ViIjoiNyIsInJvbGUiOiJtZWNoYW5pYyJ9.O9ge6JrS3mQSAYKPIu-ueC0ZhzSycMv3_cYAcUg8L5s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n     \"mechanic_ids\":[\"1\"]\r\n}\r\n   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/ticket_mechanics/4/unassign_mechanics",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"ticket_mechanics",
+								"4",
+								"unassign_mechanics"
+							]
+						}
 					},
 					"response": []
 				}
