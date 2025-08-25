@@ -523,8 +523,37 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTYxNDE0NjMsImlhdCI6MTc1NjEzNzg2Mywic3ViIjoiNyIsInJvbGUiOiJtZWNoYW5pYyJ9.O9ge6JrS3mQSAYKPIu-ueC0ZhzSycMv3_cYAcUg8L5s",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \r\n}\r\n   "
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/ticket_mechanics/get_most_tickets_mechanics",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"ticket_mechanics",
+								"get_most_tickets_mechanics"
+							]
+						}
 					},
 					"response": []
 				}
