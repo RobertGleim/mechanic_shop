@@ -817,8 +817,43 @@
 						"disableBodyPruning": true
 					},
 					"request": {
-						"method": "GET",
-						"header": []
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTU4OTAwNzcsImlhdCI6MTc1NTg4NjQ3Nywic3ViIjoiMiIsInJvbGUiOiJtZWNoYW5pYyJ9.lUIR984jMR2RER3X-_uLEB2po6_iPWoGPOXVJYjeSFQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"mechanic_ids\":[\"2\",\"1\",\"4\"]\r\n}\r\n   ",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/ticket_mechanics/1/assign_mechanics",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"ticket_mechanics",
+								"1",
+								"assign_mechanics"
+							]
+						}
 					},
 					"response": []
 				}
