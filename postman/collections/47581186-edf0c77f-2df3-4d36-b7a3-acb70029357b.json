@@ -870,10 +870,20 @@
 						"disableBodyPruning": true
 					},
 					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "\n",
+									"type": "string"
+								}
+							]
+						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/service_tickets/popular",
+							"raw": "http://127.0.0.1:5000/service_tickets",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -883,8 +893,7 @@
 							],
 							"port": "5000",
 							"path": [
-								"service_tickets",
-								"popular"
+								"service_tickets"
 							]
 						}
 					},
