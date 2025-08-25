@@ -284,7 +284,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"first_name\":\"Rob1\",\r\n    \"last_name\":\"G1\",\r\n    \"password\":\"123\",\r\n    \"email\":\"RG1@email.com\",\r\n    \"salary\":\"50000.00\",\r\n    \"address\":\"123 street street\"\r\n\r\n}",
+							"raw": "{\r\n    \"first_name\":\"Rob5\",\r\n    \"last_name\":\"G5\",\r\n    \"password\":\"123\",\r\n    \"email\":\"RG5@email.com\",\r\n    \"salary\":\"50000.00\",\r\n    \"address\":\"123 street street\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -491,7 +491,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \r\n    \"password\":\"123\",\r\n    \"email\":\"RG1@email.com\"\r\n    \r\n\r\n}",
+							"raw": "{\r\n   \r\n    \"password\":\"123\",\r\n    \"email\":\"RG@email.com\"\r\n    \r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -629,7 +629,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"customer_id\":\"2\",\r\n    \"service_description\":\"blown engine\",   \r\n    \"price\": \"20000\",\r\n    \"vin\": \"gjkg3jk4gkj23g34\"\r\n}    ",
+							"raw": "{\r\n    \"customer_id\":\"4\",\r\n    \"service_description\":\"blown engine\",   \r\n    \"price\": \"20000\",\r\n    \"vin\": \"gjkg3jk4gkj23g34\"\r\n}    ",
 							"options": {
 								"raw": {
 									"language": "json"
