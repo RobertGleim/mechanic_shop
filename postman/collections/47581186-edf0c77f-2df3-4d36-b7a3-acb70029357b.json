@@ -316,7 +316,14 @@
 					},
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTYxMzc2NzQsImlhdCI6MTc1NjEzNDA3NCwic3ViIjoiMSIsInJvbGUiOiJtZWNoYW5pYyJ9.OBSkaQbixJ7481AnZZk4pnpcQ7iSZ1dExNfOPWvtjAY",
+									"type": "string"
+								}
+							]
 						},
 						"method": "GET",
 						"header": [],
@@ -325,7 +332,7 @@
 							"raw": "{\r\n    \r\n\r\n}"
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/mechanics/1",
+							"raw": "http://127.0.0.1:5000/mechanics/profile",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -336,7 +343,7 @@
 							"port": "5000",
 							"path": [
 								"mechanics",
-								"1"
+								"profile"
 							]
 						}
 					},
