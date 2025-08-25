@@ -16,13 +16,20 @@
 					},
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"first_name\":\"Robert2\",\r\n    \"last_name\" :\"gleim2\",\r\n    \"email\":\"rgleim2@email.com\",\r\n    \"phone\":\"555-555-5555\",\r\n    \"address\":\"123 street street\"\r\n\r\n}",
+							"raw": "{\r\n    \"first_name\":\"Robert5\",\r\n    \"last_name\" :\"gleim5\",\r\n    \"email\":\"rgleim5@email.com\",\r\n    \"phone\":\"555-555-5555\",\r\n    \"address\":\"123 street street\",\r\n    \"password\":\"123\"\r\n\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
