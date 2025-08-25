@@ -702,7 +702,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n   \"mechanic_id\":\"5\",\r\n        \r\n    \"service_ticket_id\":\"5\",\r\n\r\n    \"customer_id\":\"5\"\r\n}",
+							"raw": "{\r\n   \"mechanic_id\":\"4\",\r\n        \r\n    \"service_ticket_id\":\"4\"\r\n\r\n    \r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
