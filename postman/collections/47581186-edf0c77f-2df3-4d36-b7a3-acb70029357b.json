@@ -595,7 +595,26 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": []
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"customer_id\":\"1\",\r\n    \r\n    \"service_description\":\"oil change\",   \r\n    \"price\": \"59.99\",\r\n    \"vin\": \"gjkg3jk4gkj23g34\"\r\n\r\n        \r\n}"
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/service_tickets/1",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"service_tickets",
+								"1"
+							]
+						}
 					},
 					"response": []
 				},
