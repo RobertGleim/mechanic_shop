@@ -440,7 +440,14 @@
 					},
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTYxMzc2NzQsImlhdCI6MTc1NjEzNDA3NCwic3ViIjoiMSIsInJvbGUiOiJtZWNoYW5pYyJ9.OBSkaQbixJ7481AnZZk4pnpcQ7iSZ1dExNfOPWvtjAY",
+									"type": "string"
+								}
+							]
 						},
 						"method": "DELETE",
 						"header": [],
@@ -454,7 +461,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/mechanics/2",
+							"raw": "http://127.0.0.1:5000/mechanics",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -464,8 +471,7 @@
 							],
 							"port": "5000",
 							"path": [
-								"mechanics",
-								"2"
+								"mechanics"
 							]
 						}
 					},
