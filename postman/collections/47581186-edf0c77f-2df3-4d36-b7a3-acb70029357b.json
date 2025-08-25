@@ -934,19 +934,12 @@
 					},
 					"request": {
 						"auth": {
-							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "\n",
-									"type": "string"
-								}
-							]
+							"type": "noauth"
 						},
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://127.0.0.1:5000/service_tickets",
+							"raw": "http://127.0.0.1:5000/service_tickets/popular",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -956,7 +949,8 @@
 							],
 							"port": "5000",
 							"path": [
-								"service_tickets"
+								"service_tickets",
+								"popular"
 							]
 						}
 					},
@@ -974,7 +968,7 @@
 							"bearer": [
 								{
 									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTU4OTAwNzcsImlhdCI6MTc1NTg4NjQ3Nywic3ViIjoiMiIsInJvbGUiOiJtZWNoYW5pYyJ9.lUIR984jMR2RER3X-_uLEB2po6_iPWoGPOXVJYjeSFQ",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE3NTYxNDE0MzcsImlhdCI6MTc1NjEzNzgzNywic3ViIjoiNyIsInJvbGUiOiJtZWNoYW5pYyJ9._bOur9WZ-6Dv3z5E4xCxEBGLV0KXH6hpQychnX8_Dxw",
 									"type": "string"
 								}
 							]
